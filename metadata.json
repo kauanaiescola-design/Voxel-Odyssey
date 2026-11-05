@@ -1,0 +1,6 @@
+{
+  "name": "Voxel Realms",
+  "description": "Jogo de sobrevivência e exploração em um mundo 3D voxel procedural com mineração, construção, crafting, criaturas e ciclo dia/noite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
