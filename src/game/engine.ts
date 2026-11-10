@@ -1021,15 +1021,18 @@ export class GameEngine {
     // 7. Update Particles
     this.particles.update(dt);
 
-    // 8. Update Day/Night Atmosphere
+    // 8. Update Procedural Textures (e.g. animated water ripples)
+    textureManager.update(dt);
+
+    // 9. Update Day/Night Atmosphere
     const isHoldingTorch = this.getSelectedItem()?.id === 'torch' || this.getSelectedItem()?.id === 'glowstone';
     this.environment.update(dt, this.pos.x, this.pos.y, this.pos.z, isHoldingTorch);
     this.callbacks.onTimeChange(this.environment.getTimeString(), this.environment.isNight());
 
-    // 9. Update Chunks Around Player
+    // 10. Update Chunks Around Player
     this.world.updateChunks(this.pos.x, this.pos.z, this.settings.renderDistance);
 
-    // 10. Hand Swing and Bobbing Animation
+    // 11. Hand Swing and Bobbing Animation
     let swingProgress = 0;
     if (this.handSwingTime > 0) {
       this.handSwingTime -= dt;
